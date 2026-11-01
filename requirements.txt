@@ -1,0 +1,9 @@
+torch>=2.0
+torchvision>=0.15
+numpy
+pandas
+pillow>=9.1
+matplotlib
+scikit-learn
+opencv-python-headless
+scipy   # optional: Wilcoxon test in summarize_ablation.py

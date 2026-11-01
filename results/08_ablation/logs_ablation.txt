@@ -1,0 +1,78 @@
+# Eight-arm ablation
+# Verbatim notebook output (SANC_Preprocessing_Integration.ipynb)
+
+===== cell 332 =====
+Integration check | baseline arm vs Member 3 SANC call | max |d| = 0.00e+00
+
+Low-light input  | PSNR 12.609 dB | mean 0.1878
+Reference        |                  | mean 0.3770
+
+             arm | PSNR (dB) | d vs base | out mean
+ SANC (baseline) |    16.769 |    +0.000 |   0.2544
+              +C |    16.766 |    -0.003 |   0.2548
+              +B |    16.770 |    +0.001 |   0.2545
+            +B+C |    16.766 |    -0.003 |   0.2549
+              +A |    16.791 |    +0.022 |   0.2548
+            +A+C |    16.787 |    +0.018 |   0.2552
+            +A+B |    16.791 |    +0.022 |   0.2549
+          +A+B+C |    16.787 |    +0.018 |   0.2553
+
+===== cell 333 =====
+n = 32 Kvasir-SEG validation images | low-light PSNR 12.627 dB
+
+ t0 | base PSNR | seed SD | A+B+C - base | per-image SD | max |diff|
+ 99 |    16.562 |  0.0115 |      +0.0139 |       0.0369 |     0.1639
+ 75 |    15.591 |  0.0089 |      +0.0130 |       0.0205 |     0.0961
+ 50 |    14.620 |  0.0061 |      +0.0091 |       0.0103 |     0.0474
+ 25 |    13.480 |  0.0031 |      +0.0033 |       0.0040 |     0.0155
+ 10 |    12.793 |  0.0013 |      -0.0003 |       0.0014 |     0.0058
+
+===== cell 334 =====
+Test images: 410 | excluded (empty mask file): 1
+Used: 409 | {'Kvasir-SEG': 149, 'HAM10000': 130, 'ORIGA': 130}
+
+Quick run: 24 images x 8 arms x 1 seed in 75 s
+Estimated full run (409 images x 8 arms x 3 seeds): ~64 min
+
+                    PSNR    SSIM
+arm                             
+Low-light input   9.9324  0.4813
+SANC (baseline)  12.2840  0.4971
++C               12.2842  0.4910
++B               12.2857  0.4965
++B+C             12.2858  0.4904
++A               12.2922  0.4944
++A+C             12.2932  0.4879
++A+B             12.2934  0.4939
++A+B+C           12.2943  0.4874
+
+===== cell 336 =====
+Saved locally: /content/ablation_test_seed42_per_image.csv | rows: 3681 (expected 3681)
+
+                    PSNR    SSIM
+arm                             
+Low-light input  10.0434  0.4974
+SANC (baseline)  12.4460  0.5069
++C               12.4473  0.5006
++B               12.4474  0.5060
++B+C             12.4486  0.4997
++A               12.4541  0.5035
++A+C             12.4564  0.4967
++A+B             12.4551  0.5028
++A+B+C           12.4571  0.4960 
+
+PSNR by dataset:
+dataset          HAM10000  Kvasir-SEG   ORIGA
+arm                                          
+Low-light input     7.603      12.782   9.345
+SANC (baseline)     9.303      16.744  10.662
++C                  9.300      16.738  10.677
++B                  9.305      16.746  10.663
++B+C                9.302      16.739  10.677
++A                  9.301      16.767  10.663
++A+C                9.300      16.762  10.678
++A+B                9.302      16.769  10.664
++A+B+C              9.301      16.762  10.678 
+
+Mounted at /content/drive
+Copied to Drive: /content/drive/MyDrive/SANC/results/member4/ablation_test_seed42_per_image.csv

@@ -1,0 +1,145 @@
+# Mathematical consistency audit
+# Verbatim notebook output (SANC_Preprocessing_Integration.ipynb)
+
+===== cell 263 =====
+Number of diffusion steps: 100
+First alpha_bar: 0.9998999834060669
+Final alpha_bar: 0.36356320977211
+Final signal coefficient: 0.6029620170593262
+Final noise coefficient: 0.7977699041366577
+
+===== cell 264 =====
+T: 100
+betas shape: torch.Size([100])
+alphas shape: torch.Size([100])
+alpha_bars shape: torch.Size([100])
+
+Schedule values:
+t=  0 | beta=0.000100 | alpha=0.999900 | alpha_bar=0.999900
+t=  1 | beta=0.000301 | alpha=0.999699 | alpha_bar=0.999599
+t= 50 | beta=0.010151 | alpha=0.989850 | alpha_bar=0.769291
+t= 98 | beta=0.019799 | alpha=0.980201 | alpha_bar=0.370983
+t= 99 | beta=0.020000 | alpha=0.980000 | alpha_bar=0.363563
+
+Consistency checks:
+alpha = 1 - beta: True
+alpha_bar is cumulative product: True
+
+===== cell 268 =====
+Checking DDPM posterior variance...
+Posterior variance at t=0: 0.0
+Posterior variance at t=1: 7.50847248127684e-05
+Posterior variance at t=50: 0.009803423658013344
+Posterior variance at t=99: 0.019766835495829582
+All finite: True
+
+===== cell 274 =====
+T = 100
+betas shape: (100,)
+alphas shape: (100,)
+alpha_bars shape: (100,)
+
+Selected timesteps:
+t=  0 | beta=0.000100 | alpha=0.999900 | alpha_bar=0.999900
+t=  1 | beta=0.000301 | alpha=0.999699 | alpha_bar=0.999599
+t= 50 | beta=0.010151 | alpha=0.989850 | alpha_bar=0.769291
+t= 98 | beta=0.019799 | alpha=0.980201 | alpha_bar=0.370983
+t= 99 | beta=0.020000 | alpha=0.980000 | alpha_bar=0.363563
+
+Consistency checks:
+All betas positive: True
+All betas below 1: True
+alpha = 1 - beta: True
+alpha_bar = cumulative product: True
+
+Terminal distribution diagnostics:
+alpha_bar_T: 0.36356320977211
+Signal coefficient: 0.6029620170593262
+Noise coefficient: 0.7977699041366577
+
+===== cell 275 =====
+Gaussian input           | mean=-0.00352 | std=0.99934 | finite=True
+SANC, low saliency       | mean=0.00000 | std=0.99997 | finite=True
+SANC, high saliency      | mean=-0.00000 | std=0.99997 | finite=True
+
+Low/high saliency outputs differ: True
+
+===== cell 276 =====
+T = 100
+betas shape: (100,)
+alphas shape: (100,)
+alpha_bars shape: (100,)
+
+Selected timesteps:
+t=  0 | beta=0.000100 | alpha=0.999900 | alpha_bar=0.999900
+t=  1 | beta=0.000301 | alpha=0.999699 | alpha_bar=0.999599
+t= 50 | beta=0.010151 | alpha=0.989850 | alpha_bar=0.769291
+t= 98 | beta=0.019799 | alpha=0.980201 | alpha_bar=0.370983
+t= 99 | beta=0.020000 | alpha=0.980000 | alpha_bar=0.363563
+
+Consistency:
+Betas valid: True
+alpha = 1-beta: True
+alpha_bar cumulative product: True
+
+Terminal coefficients:
+Final alpha_bar: 0.36356320977211
+Signal coefficient: 0.6029620170593262
+Noise coefficient: 0.7977699041366577
+
+===== cell 294 =====
+Checkpoint loaded successfully
+Device: cuda
+Strict loading: <All keys matched successfully>
+Saved training metadata: {'num_epochs': 10}
+
+===== cell 295 =====
+========== MEMBER 4 ENVIRONMENT CHECK ==========
+Device: cuda
+Diffusion timesteps: 100
+
+Saliency model:
+Available: True
+
+SANC module:
+Available: True
+
+Reverse model:
+Available: False
+
+========== SALIENCY OUTPUT CHECK ==========
+Model class: OriginalUNet
+Output shape: (8, 1, 128, 128)
+Minimum: 5.557148688239977e-05
+Maximum: 0.9999998807907104
+Mean: 0.16541358828544617
+Is probability map: True
+
+========== CHECK COMPLETE ==========
+
+===== cell 296 =====
+========== SANC VALIDATION ==========
+Input noise shape: (8, 3, 128, 128)
+Saliency shape: (8, 1, 128, 128)
+Colored noise shape: (8, 3, 128, 128)
+Noise mean: -0.0013371189124882221
+Noise std: 1.0001798868179321
+Colored noise mean: 2.7939677238464355e-09
+Colored noise std: 0.9999675154685974
+All outputs finite: True
+Output shape matches input: True
+
+===== cell 303 =====
+Reverse model loaded successfully!
+Strict loading: <All keys matched successfully>
+Training epochs: 10
+Parameters: 10899589
+
+===== cell 310 =====
+Predicted noise shape: torch.Size([8, 3, 128, 128])
+Expected shape: torch.Size([8, 3, 128, 128])
+Output mean: -0.09948164224624634
+Output std: 1.6554229259490967
+All values finite: True
+
+Reverse model forward pass successful!

@@ -1,0 +1,4 @@
+Dataset,Images_Evaluated,Mean_Dice,Mean_IoU
+HAM10000,130,0.8891,0.818
+Kvasir-SEG,149,0.7565,0.6423
+ORIGA,130,0.9368,0.8848

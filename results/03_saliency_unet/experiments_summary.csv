@@ -1,0 +1,8 @@
+experiment,model,loss,setup,best_val_dice,best_val_iou,best_epoch,checkpoint,note
+A,U-Net,BCE + Dice (global),"20 ep, Adam 1e-4",0.7545,0.6377,7.0,best_unet_saliency.pth,SELECTED
+B,U-Net,0.5 BCE + 0.5 Dice (per-image),20 ep,0.7507,0.6337,19.0,best_unet_bce_dice.pth,
+C,U-Net,"Tversky (a=0.4, b=0.6)","augmentation, 30 ep, patience 7",0.7502,0.6269,29.0,best_unet_tversky_augmented.pth,
+D,Attention U-Net,BCE,20 ep,0.7199,0.6036,17.0,best_attention_unet.pth,
+E,UNet++,BCE,20 ep,0.7315,0.6119,13.0,best_unetpp_saliency.pth,
+F,U-Net (fine-tuned from A),BCE,"lr 1e-5, 15 ep, patience 5",0.7545,,7.0,best_unet_finetuned.pth,no improvement; early stop after 5 ep
+G,U-Net (A) + post-processing,-,"connected components >=20 px + 3x3 blur, no retraining",,,,-,Kvasir test Dice 0.7565 -> 0.7543 (-0.0022); not adopted

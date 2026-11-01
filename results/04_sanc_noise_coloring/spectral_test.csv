@@ -1,0 +1,3 @@
+saliency,low_freq_energy,high_freq_energy,hf_over_lf
+M=0 (all low),180.7782,85.54065,0.47318
+M=1 (all high),71.50269,125.37635,1.75345

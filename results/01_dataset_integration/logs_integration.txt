@@ -1,0 +1,264 @@
+# Dataset integration and audit
+# Verbatim notebook output (SANC_Preprocessing_Integration.ipynb)
+
+===== cell 68 =====
+Total samples: 1650
+
+Dataset distribution:
+dataset
+Kvasir-SEG    1000
+ORIGA          650
+Name: count, dtype: int64
+
+Split distribution:
+split
+train    1220
+test      280
+val       150
+Name: count, dtype: int64
+
+===== cell 90 =====
+Total samples: 2300
+
+Dataset distribution:
+dataset
+Kvasir-SEG    1000
+ORIGA          650
+HAM10000       650
+Name: count, dtype: int64
+
+Split distribution:
+split
+train    1740
+test      410
+val       150
+Name: count, dtype: int64
+
+Dataset + split distribution:
+dataset     split
+HAM10000    test     130
+            train    520
+Kvasir-SEG  test     150
+            train    700
+            val      150
+ORIGA       test     130
+            train    520
+dtype: int64
+
+===== cell 91 =====
+Checking all 2300 samples...
+
+Original: 2300 / 2300
+Low-light: 2300 / 2300
+Masks: 2300 / 2300
+
+===== cell 112 =====
+Total samples: 2300
+
+Dataset distribution:
+dataset
+Kvasir-SEG    1000
+ORIGA          650
+HAM10000       650
+Name: count, dtype: int64
+
+Split distribution:
+split
+train    1740
+test      410
+val       150
+Name: count, dtype: int64
+
+Dataset + split:
+dataset     split
+HAM10000    test     130
+            train    520
+Kvasir-SEG  test     150
+            train    700
+            val      150
+ORIGA       test     130
+            train    520
+dtype: int64
+
+===== cell 118 =====
+
+===== Kvasir-SEG =====
+Original: 1000 / 1000
+Low-light: 1000 / 1000
+Masks: 1000 / 1000
+
+===== ORIGA =====
+Original: 650 / 650
+Low-light: 0 / 650
+Masks: 650 / 650
+
+===== HAM10000 =====
+Original: 0 / 650
+Low-light: 0 / 650
+Masks: 0 / 650
+
+===== cell 121 =====
+
+===== Kvasir-SEG =====
+Original: 1000 / 1000
+Low-light: 1000 / 1000
+Masks: 1000 / 1000
+
+===== ORIGA =====
+Original: 650 / 650
+Low-light: 650 / 650
+Masks: 650 / 650
+
+===== HAM10000 =====
+Original: 650 / 650
+Low-light: 650 / 650
+Masks: 650 / 650
+
+===== cell 243 =====
+Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).
+============================================================
+CHECKING REQUIRED METADATA
+============================================================
+FOUND: HAM metadata
+FOUND: ORIGA metadata
+FOUND: Kvasir train
+FOUND: Kvasir val
+FOUND: Kvasir test
+
+============================================================
+DATAFRAME SUMMARY
+============================================================
+Total rows: 2300
+
+Samples per dataset:
+dataset
+Kvasir-SEG    1000
+HAM10000       650
+ORIGA          650
+Name: count, dtype: int64
+
+Samples per split:
+split
+train    1740
+test      410
+val       150
+Name: count, dtype: int64
+
+Dataset x split:
+split       test  train  val
+dataset                     
+HAM10000     130    520    0
+Kvasir-SEG   150    700  150
+ORIGA        130    520    0
+
+Duplicate dataset/filename rows: 0
+
+============================================================
+FILE EXISTENCE CHECK
+============================================================
+
+HAM10000: 650 rows
+  original: 650/650 files found
+  low_light: 650/650 files found
+  mask: 650/650 files found
+
+Kvasir-SEG: 1000 rows
+  original: 1000/1000 files found
+  low_light: 1000/1000 files found
+  mask: 1000/1000 files found
+
+ORIGA: 650 rows
+  original: 650/650 files found
+  low_light: 650/650 files found
+  mask: 650/650 files found
+
+All referenced files exist.
+
+Valid complete samples: 2300 / 2300
+
+============================================================
+FINAL LOADER SUMMARY
+============================================================
+Train: 1740 | batches: 218
+Validation: 150 | batches: 19
+Test: 410 | batches: 52
+
+Batch tensor shapes:
+Low-light: (8, 3, 128, 128)
+Original: (8, 3, 128, 128)
+Mask: (8, 1, 128, 128)
+Datasets: ['HAM10000', 'Kvasir-SEG', 'HAM10000', 'HAM10000', 'ORIGA', 'Kvasir-SEG', 'ORIGA', 'HAM10000']
+Filenames: ['ISIC_0028484.png', 'cju3yht87j83m08507yk1u1fg.jpg', 'ISIC_0027035.png', 'ISIC_0025987.png', '355.png', 'cju30j1rgadut0801vuyrsnt8.jpg', '018.png', 'ISIC_0027483.png']
+
+Dataset setup and loader diagnostics finished.
+
+===== cell 247 =====
+Missing/empty files: 1
+Breakdown: Counter({('Kvasir-SEG', 'mask', 'empty'): 1})
+('Kvasir-SEG', 'mask', '/content/drive/MyDrive/SANC/datasets/kvasir/masks/cju89y9h0puti0818i5yw29e6.jpg', 'empty')
+
+===== cell 279 =====
+Total samples: 2300
+
+Dataset counts:
+dataset
+Kvasir-SEG    1000
+ORIGA          650
+HAM10000       650
+Name: count, dtype: int64
+
+Dataset and split counts:
+dataset     split
+HAM10000    test     130
+            train    520
+Kvasir-SEG  test     150
+            train    700
+            val      150
+ORIGA       test     130
+            train    520
+dtype: int64
+
+Official test samples: 410
+Corrupted-mask record found: 1
+Samples after excluding that record: 409
+Excluded: 1
+
+Test samples after exclusion, by dataset:
+dataset
+Kvasir-SEG    149
+ORIGA         130
+HAM10000      130
+Name: count, dtype: int64
+
+===== cell 287 =====
+Official test samples: 410
+Evaluation samples: 409
+
+Samples per dataset:
+dataset
+Kvasir-SEG    149
+ORIGA         130
+HAM10000      130
+Name: count, dtype: int64
+
+Missing files: 390
+('HAM10000', 'ISIC_0029784', 'original', 'images/ISIC_0029784.png')
+('HAM10000', 'ISIC_0029784', 'low_light', 'low_light/ISIC_0029784.png')
+('HAM10000', 'ISIC_0029784', 'mask', 'masks/ISIC_0029784.png')
+('HAM10000', 'ISIC_0033923', 'original', 'images/ISIC_0033923.png')
+('HAM10000', 'ISIC_0033923', 'low_light', 'low_light/ISIC_0033923.png')
+('HAM10000', 'ISIC_0033923', 'mask', 'masks/ISIC_0033923.png')
+('HAM10000', 'ISIC_0033735', 'original', 'images/ISIC_0033735.png')
+('HAM10000', 'ISIC_0033735', 'low_light', 'low_light/ISIC_0033735.png')
+('HAM10000', 'ISIC_0033735', 'mask', 'masks/ISIC_0033735.png')
+('HAM10000', 'ISIC_0027533', 'original', 'images/ISIC_0027533.png')
+('HAM10000', 'ISIC_0027533', 'low_light', 'low_light/ISIC_0027533.png')
+('HAM10000', 'ISIC_0027533', 'mask', 'masks/ISIC_0027533.png')
+('HAM10000', 'ISIC_0026958', 'original', 'images/ISIC_0026958.png')
+('HAM10000', 'ISIC_0026958', 'low_light', 'low_light/ISIC_0026958.png')
+('HAM10000', 'ISIC_0026958', 'mask', 'masks/ISIC_0026958.png')
+('HAM10000', 'ISIC_0033110', 'original', 'images/ISIC_0033110.png')
+('HAM10000', 'ISIC_0033110', 'low_light', 'low_light/ISIC_0033110.png')
+('HAM10000', 'ISIC_0033110', 'mask', 'masks/ISIC_0033110.png')
+('HAM10000', 'ISIC_0028151', 'original', 'images/ISIC_0028151.png')
+('HAM10000', 'ISIC_0028151', 'low_light', 'low_light/ISIC_0028151.png')

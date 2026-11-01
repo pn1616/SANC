@@ -1,0 +1,5 @@
+variant,max_abs_diff,rms_diff
+"sanc (STEP 5A), M",1.62e-05,0.0
+"extended, t=0, M",1.62e-05,0.0
+"extended, t=0, S_u",0.93,0.0812
+"extended, t=99, S_u",1.26,0.1353

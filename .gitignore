@@ -1,0 +1,20 @@
+# Model checkpoints are > 100 MB (GitHub limit) - they stay on Google Drive (SANC/models/)
+*.pth
+*.pt
+*.ckpt
+
+# Datasets and large generated data
+datasets/
+*.zip
+results/drive/**/*.csv.gz
+
+# Python / notebooks
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db

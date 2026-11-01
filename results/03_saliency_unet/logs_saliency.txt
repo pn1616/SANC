@@ -1,0 +1,232 @@
+# Saliency U-Net training/evaluation logs (cells 132/134 = run BEFORE the mask-encoding fix)
+# Verbatim notebook output (SANC_Preprocessing_Integration.ipynb)
+
+===== cell 131 =====
+Epoch [01/20] Train Loss: 0.2267 | Val Loss: 0.5802 | Val Dice: 0.7252 | Val IoU: 0.6102 ← BEST
+Epoch [02/20] Train Loss: 0.2072 | Val Loss: 0.5457 | Val Dice: 0.7330 | Val IoU: 0.6205 ← BEST
+Epoch [03/20] Train Loss: 0.2131 | Val Loss: 0.6247 | Val Dice: 0.6893 | Val IoU: 0.5749
+Epoch [04/20] Train Loss: 0.2004 | Val Loss: 0.6048 | Val Dice: 0.7108 | Val IoU: 0.5986
+Epoch [05/20] Train Loss: 0.1899 | Val Loss: 0.7275 | Val Dice: 0.6772 | Val IoU: 0.5651
+Epoch [06/20] Train Loss: 0.1830 | Val Loss: 0.6144 | Val Dice: 0.7121 | Val IoU: 0.6017
+Epoch [07/20] Train Loss: 0.1780 | Val Loss: 0.5704 | Val Dice: 0.7545 | Val IoU: 0.6377 ← BEST
+Epoch [08/20] Train Loss: 0.2031 | Val Loss: 0.5988 | Val Dice: 0.7204 | Val IoU: 0.6063
+Epoch [09/20] Train Loss: 0.1843 | Val Loss: 0.5568 | Val Dice: 0.7343 | Val IoU: 0.6231
+Epoch [10/20] Train Loss: 0.1606 | Val Loss: 0.5984 | Val Dice: 0.7165 | Val IoU: 0.6039
+Epoch [11/20] Train Loss: 0.1489 | Val Loss: 0.6163 | Val Dice: 0.7285 | Val IoU: 0.6172
+Epoch [12/20] Train Loss: 0.1575 | Val Loss: 0.6579 | Val Dice: 0.7193 | Val IoU: 0.6102
+Epoch [13/20] Train Loss: 0.1485 | Val Loss: 0.6135 | Val Dice: 0.7124 | Val IoU: 0.6027
+Epoch [14/20] Train Loss: 0.1514 | Val Loss: 0.5987 | Val Dice: 0.7481 | Val IoU: 0.6314
+Epoch [15/20] Train Loss: 0.1518 | Val Loss: 0.6370 | Val Dice: 0.7128 | Val IoU: 0.6028
+Epoch [16/20] Train Loss: 0.1441 | Val Loss: 0.6106 | Val Dice: 0.7353 | Val IoU: 0.6240
+Epoch [17/20] Train Loss: 0.1561 | Val Loss: 0.6321 | Val Dice: 0.7113 | Val IoU: 0.5833
+Epoch [18/20] Train Loss: 0.1521 | Val Loss: 0.5834 | Val Dice: 0.7233 | Val IoU: 0.6188
+Epoch [19/20] Train Loss: 0.1311 | Val Loss: 0.6311 | Val Dice: 0.7229 | Val IoU: 0.6168
+Epoch [20/20] Train Loss: 0.1480 | Val Loss: 0.6180 | Val Dice: 0.7406 | Val IoU: 0.6257
+
+Training complete.
+Best validation Dice: 0.754511506933915
+Best model saved to:
+/content/drive/MyDrive/SANC/models/best_unet_saliency.pth
+
+===== cell 132 =====
+========================================
+FINAL TEST RESULTS
+========================================
+Official test samples: 410
+Valid evaluated samples: 409
+Excluded corrupted samples: 1
+
+Test Loss: 1.6449
+Test Dice: 0.2647
+Test IoU: 0.2224
+
+===== cell 134 =====
+========================================
+DATASET-WISE TEST RESULTS
+========================================
+
+Kvasir-SEG
+Samples: 149
+Loss: 0.5308
+Dice: 0.7382
+IoU: 0.6199
+
+ORIGA
+Samples: 130
+Loss: 1.1459
+Dice: 0.0
+IoU: 0.0
+
+HAM10000
+Samples: 130
+Loss: 3.3697
+Dice: 0.0
+IoU: 0.0
+
+===== cell 147 =====
+
+===== cell 148 =====
+Epoch [01/20] Train Loss: 0.5469 | Val Loss: 0.5759 | Val Dice: 0.4903 | Val IoU: 0.3537 | BEST
+Epoch [02/20] Train Loss: 0.4414 | Val Loss: 0.5092 | Val Dice: 0.5478 | Val IoU: 0.4082 | BEST
+Epoch [03/20] Train Loss: 0.3786 | Val Loss: 0.4836 | Val Dice: 0.5693 | Val IoU: 0.4315 | BEST
+Epoch [04/20] Train Loss: 0.3205 | Val Loss: 0.4394 | Val Dice: 0.5989 | Val IoU: 0.4635 | BEST
+Epoch [05/20] Train Loss: 0.2789 | Val Loss: 0.3670 | Val Dice: 0.6458 | Val IoU: 0.5210 | BEST
+Epoch [06/20] Train Loss: 0.2464 | Val Loss: 0.3762 | Val Dice: 0.6430 | Val IoU: 0.5117
+Epoch [07/20] Train Loss: 0.2149 | Val Loss: 0.3479 | Val Dice: 0.6416 | Val IoU: 0.5234
+Epoch [08/20] Train Loss: 0.1962 | Val Loss: 0.3247 | Val Dice: 0.6961 | Val IoU: 0.5726 | BEST
+Epoch [09/20] Train Loss: 0.1897 | Val Loss: 0.3459 | Val Dice: 0.6610 | Val IoU: 0.5390
+Epoch [10/20] Train Loss: 0.1718 | Val Loss: 0.3128 | Val Dice: 0.7109 | Val IoU: 0.5876 | BEST
+Epoch [11/20] Train Loss: 0.1612 | Val Loss: 0.3154 | Val Dice: 0.6986 | Val IoU: 0.5776
+Epoch [12/20] Train Loss: 0.1516 | Val Loss: 0.3215 | Val Dice: 0.6988 | Val IoU: 0.5765
+Epoch [13/20] Train Loss: 0.1443 | Val Loss: 0.2913 | Val Dice: 0.7314 | Val IoU: 0.6093 | BEST
+Epoch [14/20] Train Loss: 0.1352 | Val Loss: 0.2801 | Val Dice: 0.7454 | Val IoU: 0.6232 | BEST
+Epoch [15/20] Train Loss: 0.1291 | Val Loss: 0.2979 | Val Dice: 0.7144 | Val IoU: 0.5995
+Epoch [16/20] Train Loss: 0.1226 | Val Loss: 0.2924 | Val Dice: 0.7342 | Val IoU: 0.6121
+Epoch [17/20] Train Loss: 0.1134 | Val Loss: 0.2936 | Val Dice: 0.7292 | Val IoU: 0.6077
+Epoch [18/20] Train Loss: 0.1106 | Val Loss: 0.2838 | Val Dice: 0.7288 | Val IoU: 0.6105
+Epoch [19/20] Train Loss: 0.1129 | Val Loss: 0.2643 | Val Dice: 0.7507 | Val IoU: 0.6337 | BEST
+Epoch [20/20] Train Loss: 0.1004 | Val Loss: 0.3064 | Val Dice: 0.7171 | Val IoU: 0.5978
+
+Experiment B training complete.
+Best validation Dice: 0.7507132072197763
+Saved to: /content/drive/MyDrive/SANC/models/best_unet_bce_dice.pth
+
+===== cell 152 =====
+Epoch [01/30] Train Loss: 0.6073 | Val Loss: 0.5760 | Val Dice: 0.3677 | Val IoU: 0.2470 | BEST
+Epoch [02/30] Train Loss: 0.5093 | Val Loss: 0.6026 | Val Dice: 0.3299 | Val IoU: 0.2162
+Epoch [03/30] Train Loss: 0.4342 | Val Loss: 0.5847 | Val Dice: 0.3296 | Val IoU: 0.2162
+Epoch [04/30] Train Loss: 0.3868 | Val Loss: 0.5536 | Val Dice: 0.4950 | Val IoU: 0.3597 | BEST
+Epoch [05/30] Train Loss: 0.3479 | Val Loss: 0.5326 | Val Dice: 0.5248 | Val IoU: 0.3910 | BEST
+Epoch [06/30] Train Loss: 0.3199 | Val Loss: 0.5589 | Val Dice: 0.5143 | Val IoU: 0.3777
+Epoch [07/30] Train Loss: 0.3020 | Val Loss: 0.4333 | Val Dice: 0.5744 | Val IoU: 0.4338 | BEST
+Epoch [08/30] Train Loss: 0.2746 | Val Loss: 0.4505 | Val Dice: 0.5720 | Val IoU: 0.4337
+Epoch [09/30] Train Loss: 0.2653 | Val Loss: 0.4056 | Val Dice: 0.6294 | Val IoU: 0.4951 | BEST
+Epoch [10/30] Train Loss: 0.2392 | Val Loss: 0.4380 | Val Dice: 0.5605 | Val IoU: 0.4317
+Epoch [11/30] Train Loss: 0.2246 | Val Loss: 0.3640 | Val Dice: 0.6434 | Val IoU: 0.5226 | BEST
+Epoch [12/30] Train Loss: 0.2171 | Val Loss: 0.3313 | Val Dice: 0.6757 | Val IoU: 0.5484 | BEST
+Epoch [13/30] Train Loss: 0.2130 | Val Loss: 0.3304 | Val Dice: 0.6613 | Val IoU: 0.5336
+Epoch [14/30] Train Loss: 0.2089 | Val Loss: 0.3184 | Val Dice: 0.6780 | Val IoU: 0.5490 | BEST
+Epoch [15/30] Train Loss: 0.1913 | Val Loss: 0.3272 | Val Dice: 0.6566 | Val IoU: 0.5240
+Epoch [16/30] Train Loss: 0.1849 | Val Loss: 0.3461 | Val Dice: 0.6335 | Val IoU: 0.5000
+Epoch [17/30] Train Loss: 0.1849 | Val Loss: 0.3074 | Val Dice: 0.6812 | Val IoU: 0.5539 | BEST
+Epoch [18/30] Train Loss: 0.1767 | Val Loss: 0.2743 | Val Dice: 0.7216 | Val IoU: 0.5988 | BEST
+Epoch [19/30] Train Loss: 0.1826 | Val Loss: 0.2836 | Val Dice: 0.7061 | Val IoU: 0.5825
+Epoch [20/30] Train Loss: 0.1726 | Val Loss: 0.3033 | Val Dice: 0.6928 | Val IoU: 0.5754
+Epoch [21/30] Train Loss: 0.1651 | Val Loss: 0.3235 | Val Dice: 0.6692 | Val IoU: 0.5381
+Epoch [22/30] Train Loss: 0.1698 | Val Loss: 0.3163 | Val Dice: 0.6678 | Val IoU: 0.5354
+Epoch [23/30] Train Loss: 0.1616 | Val Loss: 0.2711 | Val Dice: 0.7246 | Val IoU: 0.6013 | BEST
+Epoch [24/30] Train Loss: 0.1559 | Val Loss: 0.2759 | Val Dice: 0.7248 | Val IoU: 0.6063 | BEST
+Epoch [25/30] Train Loss: 0.1522 | Val Loss: 0.2717 | Val Dice: 0.7218 | Val IoU: 0.6005
+Epoch [26/30] Train Loss: 0.1520 | Val Loss: 0.2476 | Val Dice: 0.7475 | Val IoU: 0.6273 | BEST
+Epoch [27/30] Train Loss: 0.1511 | Val Loss: 0.2548 | Val Dice: 0.7442 | Val IoU: 0.6221
+Epoch [28/30] Train Loss: 0.1512 | Val Loss: 0.2563 | Val Dice: 0.7409 | Val IoU: 0.6173
+Epoch [29/30] Train Loss: 0.1471 | Val Loss: 0.2428 | Val Dice: 0.7502 | Val IoU: 0.6269 | BEST
+Epoch [30/30] Train Loss: 0.1458 | Val Loss: 0.2558 | Val Dice: 0.7292 | Val IoU: 0.6042
+
+============================================================
+EXPERIMENT C COMPLETE
+============================================================
+Best validation Dice: 0.7501655754290129
+Saved to: /content/drive/MyDrive/SANC/models/best_unet_tversky_augmented.pth
+
+===== cell 156 =====
+Epoch [01/20] Train Loss: 0.4390 | Val Loss: 0.4548 | Val Dice: 0.0732 | Val IoU: 0.0450 | BEST
+Epoch [02/20] Train Loss: 0.3246 | Val Loss: 0.4931 | Val Dice: 0.4261 | Val IoU: 0.3052 | BEST
+Epoch [03/20] Train Loss: 0.2755 | Val Loss: 0.3698 | Val Dice: 0.2363 | Val IoU: 0.1651
+Epoch [04/20] Train Loss: 0.2455 | Val Loss: 0.3654 | Val Dice: 0.5273 | Val IoU: 0.4027 | BEST
+Epoch [05/20] Train Loss: 0.2142 | Val Loss: 0.3383 | Val Dice: 0.5350 | Val IoU: 0.4121 | BEST
+Epoch [06/20] Train Loss: 0.2032 | Val Loss: 0.3003 | Val Dice: 0.6131 | Val IoU: 0.4911 | BEST
+Epoch [07/20] Train Loss: 0.1832 | Val Loss: 0.2862 | Val Dice: 0.5685 | Val IoU: 0.4501
+Epoch [08/20] Train Loss: 0.1725 | Val Loss: 0.2889 | Val Dice: 0.5161 | Val IoU: 0.4018
+Epoch [09/20] Train Loss: 0.1637 | Val Loss: 0.2839 | Val Dice: 0.5393 | Val IoU: 0.4288
+Epoch [10/20] Train Loss: 0.1520 | Val Loss: 0.2773 | Val Dice: 0.5698 | Val IoU: 0.4593
+Epoch [11/20] Train Loss: 0.1426 | Val Loss: 0.2423 | Val Dice: 0.6617 | Val IoU: 0.5445 | BEST
+Epoch [12/20] Train Loss: 0.1335 | Val Loss: 0.2513 | Val Dice: 0.6739 | Val IoU: 0.5518 | BEST
+Epoch [13/20] Train Loss: 0.1289 | Val Loss: 0.2556 | Val Dice: 0.6004 | Val IoU: 0.4952
+Epoch [14/20] Train Loss: 0.1208 | Val Loss: 0.2444 | Val Dice: 0.6847 | Val IoU: 0.5671 | BEST
+Epoch [15/20] Train Loss: 0.1116 | Val Loss: 0.2527 | Val Dice: 0.6955 | Val IoU: 0.5781 | BEST
+Epoch [16/20] Train Loss: 0.1021 | Val Loss: 0.2346 | Val Dice: 0.6998 | Val IoU: 0.5828 | BEST
+Epoch [17/20] Train Loss: 0.0960 | Val Loss: 0.2345 | Val Dice: 0.7199 | Val IoU: 0.6036 | BEST
+Epoch [18/20] Train Loss: 0.0896 | Val Loss: 0.2380 | Val Dice: 0.7098 | Val IoU: 0.5906
+Epoch [19/20] Train Loss: 0.0831 | Val Loss: 0.2761 | Val Dice: 0.6879 | Val IoU: 0.5699
+Epoch [20/20] Train Loss: 0.0870 | Val Loss: 0.2290 | Val Dice: 0.7061 | Val IoU: 0.5863
+
+============================================================
+EXPERIMENT D COMPLETE
+============================================================
+Best validation Dice: 0.7198638382710909
+Saved to: /content/drive/MyDrive/SANC/models/best_attention_unet.pth
+
+===== cell 160 =====
+Epoch [01/20] Train Loss: 0.3486 | Val Loss: 0.5025 | Val Dice: 0.3535 | Val IoU: 0.2414 | BEST
+Epoch [02/20] Train Loss: 0.2837 | Val Loss: 0.3682 | Val Dice: 0.2584 | Val IoU: 0.1772
+Epoch [03/20] Train Loss: 0.2413 | Val Loss: 0.3649 | Val Dice: 0.4882 | Val IoU: 0.3588 | BEST
+Epoch [04/20] Train Loss: 0.2204 | Val Loss: 0.3392 | Val Dice: 0.5711 | Val IoU: 0.4400 | BEST
+Epoch [05/20] Train Loss: 0.1957 | Val Loss: 0.2923 | Val Dice: 0.5750 | Val IoU: 0.4509 | BEST
+Epoch [06/20] Train Loss: 0.1819 | Val Loss: 0.2832 | Val Dice: 0.5615 | Val IoU: 0.4471
+Epoch [07/20] Train Loss: 0.1735 | Val Loss: 0.2666 | Val Dice: 0.5985 | Val IoU: 0.4767 | BEST
+Epoch [08/20] Train Loss: 0.1586 | Val Loss: 0.2671 | Val Dice: 0.5879 | Val IoU: 0.4680
+Epoch [09/20] Train Loss: 0.1487 | Val Loss: 0.2492 | Val Dice: 0.6639 | Val IoU: 0.5406 | BEST
+Epoch [10/20] Train Loss: 0.1385 | Val Loss: 0.2681 | Val Dice: 0.6553 | Val IoU: 0.5283
+Epoch [11/20] Train Loss: 0.1283 | Val Loss: 0.2431 | Val Dice: 0.6855 | Val IoU: 0.5645 | BEST
+Epoch [12/20] Train Loss: 0.1212 | Val Loss: 0.2317 | Val Dice: 0.6710 | Val IoU: 0.5498
+Epoch [13/20] Train Loss: 0.1135 | Val Loss: 0.2248 | Val Dice: 0.7315 | Val IoU: 0.6119 | BEST
+Epoch [14/20] Train Loss: 0.1106 | Val Loss: 0.2400 | Val Dice: 0.7070 | Val IoU: 0.5919
+Epoch [15/20] Train Loss: 0.1030 | Val Loss: 0.2263 | Val Dice: 0.6997 | Val IoU: 0.5803
+Epoch [16/20] Train Loss: 0.0972 | Val Loss: 0.2513 | Val Dice: 0.7201 | Val IoU: 0.5978
+Epoch [17/20] Train Loss: 0.0850 | Val Loss: 0.2301 | Val Dice: 0.7250 | Val IoU: 0.6054
+Epoch [18/20] Train Loss: 0.0845 | Val Loss: 0.2551 | Val Dice: 0.6963 | Val IoU: 0.5769
+Epoch [19/20] Train Loss: 0.0812 | Val Loss: 0.2370 | Val Dice: 0.7035 | Val IoU: 0.5861
+Epoch [20/20] Train Loss: 0.0757 | Val Loss: 0.2523 | Val Dice: 0.6998 | Val IoU: 0.5768
+
+============================================================
+EXPERIMENT E COMPLETE
+============================================================
+Best validation Dice: 0.7315053877077604
+Saved to: /content/drive/MyDrive/SANC/models/best_unetpp_saliency.pth
+
+===== cell 165 =====
+Fine-tune [01/15] Train Loss: 0.0571 | Val Loss: 0.2635 | Val Dice: 0.7442 | Val IoU: 0.6306
+Fine-tune [02/15] Train Loss: 0.0525 | Val Loss: 0.2623 | Val Dice: 0.7527 | Val IoU: 0.6383
+Fine-tune [03/15] Train Loss: 0.0515 | Val Loss: 0.2545 | Val Dice: 0.7511 | Val IoU: 0.6357
+Fine-tune [04/15] Train Loss: 0.0494 | Val Loss: 0.2694 | Val Dice: 0.7502 | Val IoU: 0.6370
+Fine-tune [05/15] Train Loss: 0.0502 | Val Loss: 0.2718 | Val Dice: 0.7539 | Val IoU: 0.6376
+
+Early stopping triggered.
+
+============================================================
+EXPERIMENT F COMPLETE
+============================================================
+Original baseline Dice: 0.754511506933915
+Fine-tuned best Dice: 0.754511506933915
+Saved to: /content/drive/MyDrive/SANC/models/best_unet_finetuned.pth
+
+===== cell 172 =====
+============================================================
+REFINEMENT COMPARISON
+============================================================
+Valid samples: 149
+
+Original Dice: 0.7565
+Refined Dice: 0.7543
+
+Original IoU: 0.6423
+Refined IoU: 0.6398
+
+Dice change: -0.0022
+IoU change: -0.0025
+
+===== cell 248 =====
+Test samples originally: 410
+Test samples evaluated: 409
+Excluded: 1
+HAM10000: N=130, Mean Dice=0.8891, Mean IoU=0.8180
+Kvasir-SEG: N=149, Mean Dice=0.7565, Mean IoU=0.6423
+ORIGA: N=130, Mean Dice=0.9368, Mean IoU=0.8848
+
+===== cell 249 =====
+Results saved to: /content/drive/MyDrive/SANC/results/saliency_test_results_diagnostic.csv
+   Dataset  Images_Evaluated  Mean_Dice  Mean_IoU
+  HAM10000               130     0.8891    0.8180
+Kvasir-SEG               149     0.7565    0.6423
+     ORIGA               130     0.9368    0.8848

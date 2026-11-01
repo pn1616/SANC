@@ -1,0 +1,115 @@
+# Forward diffusion, reverse training and sampling
+# Verbatim notebook output (SANC_Preprocessing_Integration.ipynb)
+
+===== cell 188 =====
+============================================================
+DIFFUSION SCHEDULE
+============================================================
+T: 100
+Beta start: 0.0001
+Beta end: 0.02
+alpha_bar[0]: 0.9998999834060669
+alpha_bar[-1]: 0.36356320977211
+Schedule device: cuda:0
+
+===== cell 205 =====
+
+===== cell 214 =====
+
+===== cell 219 =====
+
+===== cell 232 =====
+Original: torch.Size([8, 3, 128, 128])
+Saliency: torch.Size([8, 1, 128, 128])
+SANC noise: torch.Size([8, 3, 128, 128])
+x_t: torch.Size([8, 3, 128, 128])
+Predicted noise: torch.Size([8, 3, 128, 128])
+
+Loss: 0.01598050445318222
+NaN: False
+Inf: False
+
+===== cell 235 =====
+========== REVERSE DIFFUSION SANITY CHECK ==========
+Original:           torch.Size([8, 3, 128, 128])
+Low-light:          torch.Size([8, 3, 128, 128])
+Saliency:           torch.Size([8, 1, 128, 128])
+SANC noise:         torch.Size([8, 3, 128, 128])
+x_t:                torch.Size([8, 3, 128, 128])
+Predicted noise:    torch.Size([8, 3, 128, 128])
+
+Timestep: [28, 98, 79, 11, 53, 27, 8, 74]
+Loss: 1.0033358335494995
+NaN: False
+Inf: False
+
+===== cell 236 =====
+Epoch 01/10 | Train Loss: 0.194225
+Epoch 02/10 | Train Loss: 0.062696
+Epoch 03/10 | Train Loss: 0.045478
+Epoch 04/10 | Train Loss: 0.037629
+Epoch 05/10 | Train Loss: 0.030604
+Epoch 06/10 | Train Loss: 0.032263
+Epoch 07/10 | Train Loss: 0.027719
+Epoch 08/10 | Train Loss: 0.027597
+Epoch 09/10 | Train Loss: 0.023040
+Epoch 10/10 | Train Loss: 0.023369
+
+===== cell 257 =====
+Input shape: (8, 3, 128, 128)
+Output shape: (8, 3, 128, 128)
+Output finite: True
+Output range: -9.424113273620605 9.925678253173828
+
+===== cell 259 =====
+Output finite: True
+Output min: -0.3676498830318451
+Output max: 0.938933789730072
+Output mean: 0.1952962875366211
+Output std: 0.21967580914497375
+
+===== cell 262 =====
+x std: 0.9979568719863892
+Predicted noise std: 5.142820358276367
+Reverse mean std: 0.9495017528533936
+Reverse mean range: -4.601456165313721 4.485311985015869
+All finite: True
+
+===== cell 265 =====
+Starting from Gaussian noise:
+std=1.0015
+After step 99: mean=0.0001, std=0.9920, min=-4.213, max=4.688, finite=True
+After step 75: mean=0.0484, std=0.7749, min=-3.353, max=3.579, finite=True
+After step 50: mean=0.1036, std=0.5451, min=-2.459, max=2.866, finite=True
+After step 25: mean=0.1634, std=0.3267, min=-1.509, max=1.748, finite=True
+After step 10: mean=0.1916, std=0.2389, min=-0.751, max=1.187, finite=True
+After step  1: mean=0.1926, std=0.2182, min=-0.489, max=0.968, finite=True
+After step  0: mean=0.1915, std=0.2174, min=-0.467, max=0.953, finite=True
+
+===== cell 266 =====
+Low-light input:
+min=0.0000, max=0.6392, mean=0.1878, std=0.1405
+
+Original target:
+min=0.0000, max=1.0000, mean=0.3770, std=0.2812
+
+Enhanced output before clipping:
+min=-0.3389, max=0.9488, mean=0.1898, std=0.2164
+
+Fraction outside [0, 1]: 0.2364959716796875
+
+===== cell 267 =====
+Original range: 0.0 1.0
+Low-light range: 0.0 0.6392157077789307
+Colored noise std: 0.9999707341194153
+Predicted noise std: 0.9672455191612244
+Noise prediction MSE: 0.006586392875760794
+Predictions finite: True
+
+===== cell 270 =====
+Target mean/std: 0.37702322006225586 0.28123027086257935
+Revised output mean/std: 0.1914728581905365 0.21586818993091583
+Revised output range: -0.3361663222312927 0.9125354290008545
+All finite: True
+
+===== cell 272 =====

@@ -1,0 +1,232 @@
+# Extensions A, B, C and audits A1-A3
+# Verbatim notebook output (SANC_Preprocessing_Integration.ipynb)
+
+===== cell 298 =====
+Timestep  0 | Mean effective saliency: 0.1654 | Mean uncertainty: 0.1216 | Noise std: 1.0000 | Finite: True
+Timestep 25 | Mean effective saliency: 0.1601 | Mean uncertainty: 0.1216 | Noise std: 1.0000 | Finite: True
+Timestep 50 | Mean effective saliency: 0.1548 | Mean uncertainty: 0.1216 | Noise std: 1.0000 | Finite: True
+Timestep 75 | Mean effective saliency: 0.1495 | Mean uncertainty: 0.1216 | Noise std: 1.0000 | Finite: True
+Timestep 99 | Mean effective saliency: 0.1444 | Mean uncertainty: 0.1216 | Noise std: 1.0000 | Finite: True
+
+===== cell 300 =====
+========== CORRECTED ABLATION ==========
+Original SANC            | Saliency: 0.16541 | Noise std: 0.99997 | Finite: True
+UA-SANC                  | Saliency: 0.14438 | Noise std: 0.99997 | Finite: True
+TD-SANC                  | Saliency: 0.08271 | Noise std: 0.99997 | Finite: True
+Combined UA-TD-SANC      | Saliency: 0.07219 | Noise std: 0.99997 | Finite: True
+
+===== cell 313 =====
+Input shape: torch.Size([8, 3, 128, 128])
+Structural map shape: torch.Size([8, 1, 128, 128])
+Minimum: 0.0
+Maximum: 0.9998078346252441
+Mean: 0.06160527467727661
+All values finite: True
+
+===== cell 314 =====
+Original saliency shape: torch.Size([8, 1, 128, 128])
+Structural map shape: torch.Size([8, 1, 128, 128])
+Combined map shape: torch.Size([8, 1, 128, 128])
+
+Mean values:
+Original saliency: 0.16541358828544617
+Structural map: 0.06160527467727661
+Combined saliency: 0.13427108526229858
+
+Combined map range:
+Minimum: 0.00023030636657495052
+Maximum: 0.9330424666404724
+All values finite: True
+
+===== cell 316 =====
+Uncertainty mean: 0.12156753987073898
+Uncertainty range: 2.9137961519154487e-06 1.0
+
+Combined saliency mean: 0.13427108526229858
+Uncertainty-aware saliency mean: 0.11824412643909454
+All values finite: True
+
+===== cell 318 =====
+
+Timestep: 0
+Low frequency mean: 0.5086145401000977
+Mid frequency mean: 0.30000001192092896
+High frequency mean: 0.1913854479789734
+Weight sum: 1.0
+
+Timestep: 50
+Low frequency mean: 0.5338671207427979
+Mid frequency mean: 0.30000001192092896
+High frequency mean: 0.16613292694091797
+Weight sum: 1.0
+
+Timestep: 99
+Low frequency mean: 0.5586146116256714
+Mid frequency mean: 0.30000001192092896
+High frequency mean: 0.14138545095920563
+Weight sum: 1.0
+
+===== cell 323 =====
+
+Timestep: 0
+Low-frequency energy:  0.3051
+Mid-frequency energy:  0.4506
+High-frequency energy: 0.2443
+
+Timestep: 50
+Low-frequency energy:  0.3245
+Mid-frequency energy:  0.4529
+High-frequency energy: 0.2225
+
+Timestep: 99
+Low-frequency energy:  0.3433
+Mid-frequency energy:  0.4546
+High-frequency energy: 0.2021
+
+===== cell 324 =====
+
+Timestep: 0
+Output shape: torch.Size([8, 3, 128, 128])
+Mean: 1.4745941134819418e-09
+Standard deviation: 0.9999674558639526
+All finite: True
+
+Timestep: 50
+Output shape: torch.Size([8, 3, 128, 128])
+Mean: -3.1044086745701804e-10
+Standard deviation: 0.9999675154685974
+All finite: True
+
+Timestep: 99
+Output shape: torch.Size([8, 3, 128, 128])
+Mean: -1.0089328261742025e-09
+Standard deviation: 0.9999674558639526
+All finite: True
+
+===== cell 325 =====
+T                            OK
+sanc                         OK
+sanc_noise_coloring          OK
+extended_sanc                OK
+saliency_model               OK
+uncertainty_aware_saliency   OK
+low_light                    OK
+Reverse model variable(s): ['reverse_model_check']
+
+Saliency model: OriginalUNet | range [0.00006, 1.00000] | shapes match S_u: True
+
+Difference from training-time SANC noise:
+  sanc (STEP 5A), M      | max |d| = 1.62e-05 | RMS d = 0.0000
+  extended, t=0,  M      | max |d| = 1.62e-05 | RMS d = 0.0000
+  extended, t=0,  S_u    | max |d| = 9.30e-01 | RMS d = 0.0812
+  extended, t=99, S_u    | max |d| = 1.26e+00 | RMS d = 0.1353
+
+===== cell 326 =====
+Noise-prediction MSE of the frozen model (mean of 4 seeds, 8 images)
+Ratio in brackets = variant MSE / Original SANC MSE
+
+  t |      Original SANC |             C only |           A+B only |              A+B+C
+  0 |    0.66159 (1.00x) |    0.66159 (1.00x) |    0.66694 (1.01x) |    0.66694 (1.01x)
+ 10 |    0.04158 (1.00x) |    0.04170 (1.00x) |    0.04241 (1.02x) |    0.04253 (1.02x)
+ 25 |    0.01237 (1.00x) |    0.01245 (1.01x) |    0.01253 (1.01x) |    0.01262 (1.02x)
+ 50 |    0.00688 (1.00x) |    0.00692 (1.01x) |    0.00688 (1.00x) |    0.00694 (1.01x)
+ 75 |    0.00778 (1.00x) |    0.00773 (0.99x) |    0.00772 (0.99x) |    0.00770 (0.99x)
+ 99 |    0.00942 (1.00x) |    0.00924 (0.98x) |    0.00930 (0.99x) |    0.00915 (0.97x)
+
+Target gap: MSE between the variant noise and the original SANC noise
+  t |     C only |   A+B only |      A+B+C
+  0 |    0.00000 |    0.00658 |    0.00658
+ 10 |    0.00007 |    0.00658 |    0.00710
+ 25 |    0.00044 |    0.00658 |    0.00816
+ 50 |    0.00178 |    0.00658 |    0.01067
+ 75 |    0.00403 |    0.00658 |    0.01412
+ 99 |    0.00704 |    0.00658 |    0.01830
+
+===== cell 327 =====
+S_u levels tested: [0.0, 0.0188, 0.7274, 1.0] 
+
+lambda_t | worst increment / beta_t |   at S | at t | result
+    0.00 |                   0.2568 |  0.000 |    1 | VALID
+    0.05 |                   0.0877 |  0.000 |   99 | VALID
+    0.10 |                  -0.0014 |  0.000 |   99 | INVALID
+    0.15 |                  -0.0201 |  0.019 |   84 | INVALID
+    0.50 |                  -0.2088 |  1.000 |   77 | INVALID
+
+===== cell 328 =====
+E   vs structural_map                | max |diff| = 0.00e+00
+S   vs combined_saliency             | max |diff| = 0.00e+00
+U   vs uncertainty_map               | max |diff| = 1.19e-07
+S_u vs uncertainty_aware_saliency    | max |diff| = 8.94e-08
+
+S_u mean: 0.1182441 (expected ~0.1182441)
+
+===== cell 329 =====
+Consistency:
+  baseline arm vs training SANC   | max |d| = 0.00e+00
+  +A+B+C arm vs extended(S_u)     | max |d| = 0.00e+00
+
+t = 99
+             arm |      mean |     std |    low |    mid |   high | RMS vs baseline
+ SANC (baseline) |  3.88e-10 |  1.0000 | 0.2903 | 0.4444 | 0.2653 | 0.0000
+              +C |  1.79e-09 |  1.0000 | 0.3279 | 0.4489 | 0.2233 | 0.0839
+              +B |  1.09e-09 |  1.0000 | 0.2964 | 0.4461 | 0.2574 | 0.0380
+            +B+C |  1.16e-09 |  1.0000 | 0.3342 | 0.4503 | 0.2155 | 0.1028
+              +A | -1.55e-09 |  1.0000 | 0.3005 | 0.4487 | 0.2508 | 0.0629
+            +A+C | -1.24e-09 |  1.0000 | 0.3388 | 0.4529 | 0.2083 | 0.1184
+            +A+B | -3.10e-10 |  1.0000 | 0.3052 | 0.4498 | 0.2450 | 0.0812
+          +A+B+C |  7.76e-10 |  1.0000 | 0.3435 | 0.4537 | 0.2028 | 0.1353
+
+===== cell 330 =====
+Pixel share per region:
+  inside mask        0.1375
+  outside mask       0.8625
+  edges (top 10%)    0.0996
+  uncertain (U>.5)   0.0765
+
+         map |      inside mask |     outside mask |  edges (top 10%) | uncertain (U>.5)
+    M (SANC) |           0.6346 |           0.0906 |           0.1654 |           0.4748
+        A: S |           0.4613 |           0.0821 |           0.1992 |           0.3548
+  B: M(1-lU) |           0.5739 |           0.0759 |           0.1417 |           0.2855
+    A+B: S_u |           0.4169 |           0.0706 |           0.1765 |           0.2135
+
+===== cell 331 =====
+========================================================================
+Kvasir-SEG  (n = 16 training images)
+  t  | MSE baseline | MSE A+B+C | ratio
+  10 |   0.04124    |  0.04210  | 1.02x
+  25 |   0.01228    |  0.01253  | 1.02x
+  50 |   0.00686    |  0.00692  | 1.01x
+  99 |   0.00922    |  0.00897  | 0.97x
+
+          map |  inside mask | edges top10% |    uncertain
+     M (SANC) |       0.9008 |       0.1698 |       0.5140
+         A: S |       0.6491 |       0.1995 |       0.3810
+   B: M(1-lU) |       0.8520 |       0.1493 |       0.3055
+     A+B: S_u |       0.6133 |       0.1813 |       0.2265
+========================================================================
+HAM10000  (n = 16 training images)
+  t  | MSE baseline | MSE A+B+C | ratio
+  10 |   0.02134    |  0.02198  | 1.03x
+  25 |   0.00962    |  0.00988  | 1.03x
+  50 |   0.00675    |  0.00683  | 1.01x
+  99 |   0.00844    |  0.00821  | 0.97x
+
+          map |  inside mask | edges top10% |    uncertain
+     M (SANC) |       0.9670 |       0.1440 |       0.4896
+         A: S |       0.6955 |       0.2114 |       0.3617
+   B: M(1-lU) |       0.9421 |       0.1379 |       0.2982
+     A+B: S_u |       0.6773 |       0.2055 |       0.2203
+========================================================================
+ORIGA  (n = 16 training images)
+  t  | MSE baseline | MSE A+B+C | ratio
+  10 |   0.03432    |  0.03432  | 1.00x
+  25 |   0.01227    |  0.01232  | 1.00x
+  50 |   0.00729    |  0.00733  | 1.01x
+  99 |   0.00876    |  0.00858  | 0.98x
+
+          map |  inside mask | edges top10% |    uncertain
+     M (SANC) |       0.9460 |       0.1062 |       0.5125
+         A: S |       0.7185 |       0.1642 |       0.4291
+   B: M(1-lU) |       0.9060 |       0.0986 |       0.3088
+     A+B: S_u |       0.6868 |       0.1570 |       0.2583
+========================================================================

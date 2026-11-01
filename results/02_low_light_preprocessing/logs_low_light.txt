@@ -1,0 +1,67 @@
+# Low-light generation and verification
+# Verbatim notebook output (SANC_Preprocessing_Integration.ipynb)
+
+===== cell 30 =====
+Original images: 650
+Low-light images: 113
+
+===== cell 31 =====
+Original files: 650
+Low-light files: 0
+
+Original first 20:
+['001.png', '002.png', '003.png', '004.png', '005.png', '006.png', '007.png', '008.png', '009.png', '010.png', '011.png', '012.png', '013.png', '014.png', '015.png', '016.png', '017.png', '018.png', '019.png', '020.png']
+
+Low-light first 20:
+[]
+
+===== cell 33 =====
+Missing low-light files: 650
+First 30 missing:
+['001.png', '002.png', '003.png', '004.png', '005.png', '006.png', '007.png', '008.png', '009.png', '010.png', '011.png', '012.png', '013.png', '014.png', '015.png', '016.png', '017.png', '018.png', '019.png', '020.png', '021.png', '022.png', '023.png', '024.png', '025.png', '026.png', '027.png', '028.png', '029.png', '030.png']
+
+===== cell 35 =====
+Original image files: 650
+Low-light image files: 380
+
+===== cell 37 =====
+Missing unique low-light files: 270
+First 30 missing:
+['001.png', '002.png', '003.png', '004.png', '005.png', '006.png', '007.png', '008.png', '009.png', '010.png', '011.png', '012.png', '013.png', '014.png', '015.png', '016.png', '017.png', '018.png', '019.png', '020.png', '021.png', '022.png', '023.png', '024.png', '025.png', '026.png', '027.png', '028.png', '029.png', '030.png']
+
+===== cell 41 =====
+Processed 50/650 | Files in Drive: 50
+Processed 100/650 | Files in Drive: 100
+Processed 150/650 | Files in Drive: 150
+Processed 200/650 | Files in Drive: 200
+Processed 250/650 | Files in Drive: 235
+Processed 300/650 | Files in Drive: 255
+Processed 350/650 | Files in Drive: 275
+Processed 400/650 | Files in Drive: 300
+Processed 450/650 | Files in Drive: 335
+Processed 500/650 | Files in Drive: 350
+Processed 550/650 | Files in Drive: 385
+Processed 600/650 | Files in Drive: 405
+Processed 650/650 | Files in Drive: 425
+
+===== cell 44 =====
+Original: 650
+Generated locally: 650
+
+===== cell 45 =====
+Missing locally: 0
+
+===== cell 52 =====
+Original: 650 / 650
+Low-light: 650 / 650
+Masks: 650 / 650
+
+===== cell 58 =====
+Original: 1000 / 1000
+Low-light: 1000 / 1000
+Masks: 1000 / 1000
+
+===== cell 88 =====
+Original: 650 / 650
+Low-light: 650 / 650
+Masks: 650 / 650

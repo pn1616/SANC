@@ -1,0 +1,95 @@
+# SANC formulation tests
+# Verbatim notebook output (SANC_Preprocessing_Integration.ipynb)
+
+===== cell 175 =====
+============================================================
+SANC NOISE STRENGTH
+============================================================
+Saliency min: 0.00010975571785820648
+Saliency max: 1.0
+Noise min: 0.0
+Noise max: 0.9998902678489685
+
+===== cell 176 =====
+============================================================
+CONTROLLED SANC NOISE
+============================================================
+Base noise: 0.2
+Noise strength range: 0.0 to 0.1999780535697937
+
+===== cell 178 =====
+============================================================
+SANC SPATIAL NOISE MAP
+============================================================
+Shape: torch.Size([8, 1, 128, 128])
+Minimum: 0.0
+Maximum: 0.1999780535697937
+Mean: 0.1714126467704773
+
+===== cell 180 =====
+============================================================
+SANC NOISY INPUT
+============================================================
+Original: torch.Size([8, 3, 128, 128])
+Noise map: torch.Size([8, 3, 128, 128])
+SANC input: torch.Size([8, 3, 128, 128])
+Range: 0.0 to 1.0
+
+===== cell 191 =====
+============================================================
+CORRECTED SANC TEST
+============================================================
+Input noise shape:    torch.Size([2, 3, 128, 128])
+Saliency shape:       torch.Size([2, 1, 128, 128])
+Colored noise shape:  torch.Size([2, 3, 128, 128])
+
+Gaussian mean: 0.005931410007178783
+Gaussian std: 0.9997841119766235
+SANC mean: 2.4835269396561444e-09
+SANC std: 0.9999713897705078
+
+NaN present: False
+Inf present: False
+
+Low-saliency weights:
+  Low : 0.550000011920929
+  Mid : 0.3
+  High: 0.15000000596046448
+
+High-saliency weights:
+  Low : 0.20000001788139343
+  Mid : 0.3
+  High: 0.5
+
+===== cell 193 =====
+============================================================
+LOCAL SALIENCY-DEPENDENT SPECTRAL TEST
+============================================================
+
+Low-saliency noise:
+  Low-frequency energy : 180.7782
+  High-frequency energy: 85.54065
+
+High-saliency noise:
+  Low-frequency energy : 71.50269
+  High-frequency energy: 125.37635
+
+High/Low ratio:
+  Low saliency : 0.47318012
+  High saliency: 1.7534493
+
+===== cell 203 =====
+
+===== cell 204 =====
+======================================================================
+LOCAL SANC FREQUENCY ANALYSIS
+======================================================================
+High-saliency pixels: 959
+Low-saliency pixels : 14799
+
+Local high-frequency energy:
+  High-saliency: 1.0155415534973145
+  Low-saliency : 0.45933032035827637
+
+High / Low ratio: 2.2109176912075346
+PASS: high-saliency regions contain stronger high-frequency variation.

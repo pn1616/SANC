@@ -1,0 +1,6 @@
+lambda_t,worst_increment_over_beta,at_S,at_t,result
+0.0,0.2568,0.0,1,VALID
+0.05,0.0877,0.0,99,VALID
+0.1,-0.0014,0.0,99,INVALID
+0.15,-0.0201,0.019,84,INVALID
+0.5,-0.2088,1.0,77,INVALID
